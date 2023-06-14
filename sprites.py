@@ -8,8 +8,8 @@ vec = pg.math.Vector2
 class Player(pg.sprite.Sprite):
     def __init__(self) -> None:
         pg.sprite.Sprite.__init__(self)
-        self.image = pg.image.load(os.path.join(os.path.dirname(
-            os.path.abspath(__file__)) + '\\Flappy-Img', 'fish r1.png'))
+        self.image = pg.image.load(os.path.join('Flappy-Img', 'fish r1.png'))
+
         self.image = pg.transform.scale(self.image, (50, 30))
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
@@ -43,8 +43,7 @@ class Pipe(pg.sprite.Sprite):
     def __init__(self, x: float = 50, y: float = 0, w: float = 50, h: float = 50) -> None:
         pg.sprite.Sprite.__init__(self)
         #self.image = pg.Surface((50,HEIGHT/2))
-        self.image = pg.image.load(os.path.join(os.path.dirname(
-            os.path.abspath(__file__)) + '\\Flappy-Img', 'pipe.png')).convert_alpha()
+        self.image = pg.image.load(os.path.join('Flappy-Img', 'pipe.png')).convert_alpha()
         ratio = round(rand.uniform(1.5, 6),1)
         self.image = pg.transform.scale(self.image, (65, HEIGHT))
         self.rect = self.image.get_rect()

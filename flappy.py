@@ -172,7 +172,7 @@ class Game():
         text_rect = text_surface.get_rect()
         if pos is None:
             text_rect.midtop = (x, y)
-        elif pos is "version":
+        elif pos == "version":
             text_rect.midbottom = (x,y)
         
         self.screen.blit(text_surface, text_rect)
